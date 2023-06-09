@@ -1,7 +1,6 @@
 <template>
   <section>
-    <h1>404:</h1>
-    <h3></h3>
+    <h1>{{ props.content }}</h1>
   </section>
 </template>
 
