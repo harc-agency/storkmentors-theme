@@ -1,7 +1,5 @@
 <template>
-  <footer>
-    <span>&copy Copyright</span>
-  </footer>
+  <footer>footer stuff</footer>
 </template>
 
 <script setup></script>

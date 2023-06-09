@@ -6,17 +6,17 @@ import Layout from './shared/Layout.vue'
 InertiaProgress.init()
 
 createInertiaApp({
-  resolve: (name) => {
-    const page = require(`./Pages/${name}`).default
+    resolve: (name) => {
+        const page = require(`./Pages/${name}`).default
 
-    // Use global layout for all pages, unless overridden by individual page.
-    page.layout ??= Layout
+        // Use global layout for all pages, unless overridden by individual page.
+        page.layout ??= Layout
 
-    return page
-  },
-  setup({ el, App, props, plugin }) {
-    createApp({ render: () => h(App, props) })
-      .use(plugin)
-      .mount(el)
-  },
+        return page
+    },
+    setup({ el, App, props, plugin }) {
+        createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .mount(el)
+    },
 })
