@@ -10,7 +10,9 @@ mix.js('src/js/app.js', 'dist')
     .webpackConfig({
         resolve: {
             alias: {
+                '~': path.resolve(__dirname),
                 '@': path.resolve('src/js'),
+
             },
         },
     })
