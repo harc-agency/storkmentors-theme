@@ -4,8 +4,14 @@
 
     <Slider :slides="slides" />
 
-    <div class="MediaObjects">
-      <h1>{{mediaObject}}</h1>
+    <div class="bg-primary p-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <img :src="mediaObject.image.url" alt />
+        <div class="p-4">
+          <h2 class="text-3xl font-bold">{{ mediaObject.title }}</h2>
+          <div v-html="mediaObject.description"></div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -21,24 +27,22 @@ const { props } = reactive(usePage());
 // props.fields
 
 const slides = computed(() => {
-  let fields = props.fields.page_sections.filter(
+  let slider = props.fields.page_sections.filter(
     section => section.acf_fc_layout === "slider"
   );
-  if (fields.length) {
-    return fields[0].slides;
+  if (slider.length) {
+    return slider[0].slides;
   }
 });
 
-// const mediaObject = computed(() => {
-//   console.log("mediaObject computed");
-
-//   let fields = props.fields.page_sections.filter(
-//     section => section.acf_fc_layout === "media_object"
-//   );
-//   if (fields.length) {
-//     return fields[0].media_object;
-//   }
-// });
+const mediaObject = computed(() => {
+  let mediaObject = props.fields.page_sections.filter(
+    section => section.acf_fc_layout === "media_object"
+  );
+  if (mediaObject.length) {
+    return mediaObject[0];
+  }
+});
 </script>
 
 <style>
