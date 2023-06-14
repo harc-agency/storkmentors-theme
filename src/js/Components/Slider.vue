@@ -4,6 +4,10 @@
     :keyboard="{
       enabled: true,
     }"
+    :autoplay="{
+      delay: 32500,
+      disableOnInteraction: false,
+    }"
     :loop="true"
     :pagination="{
         clickable: true,
@@ -37,12 +41,18 @@ import { ref } from "vue";
 //Link
 import { Link } from "@inertiajs/inertia-vue3";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation, EffectCards, Keyboard } from "swiper";
+import {
+  Pagination,
+  Navigation,
+  EffectCards,
+  Keyboard,
+  Autoplay
+} from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-const modules = [Keyboard, Navigation, EffectCards];
+const modules = [Keyboard, Navigation, EffectCards, Pagination, Autoplay];
 
 const swiperInstance = ref();
 
