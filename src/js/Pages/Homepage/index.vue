@@ -218,9 +218,8 @@ onMounted(() => {
       trigger: "#the_secret_of_change-0",
       start: "40% 70%",
       end: "bottom 20%",
-
-      scrub: true,
-      markers: true
+      scrub: true
+      //   markers: true
       //   toggleActions: "restart none reverse reverse" // onEnter onLeave onEnterBack onLeaveBack
     },
     opacity: 1,
