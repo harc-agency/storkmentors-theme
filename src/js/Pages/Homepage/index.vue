@@ -102,7 +102,7 @@
       </div>
 
       <!-- the secret of change -->
-      <div class="relative my-10">
+      <div class="relative my-10" id="the_secret_of_change">
         <img :src="path('images/s26.jpg')" alt class="w-full" />
         <div class="absolute inset-0 bg-gradient-to-l from-transparent to-white">
           <div class="text-1xl md:text-4xl font-bold p-0 md:p-10">
@@ -216,10 +216,10 @@ onMounted(() => {
   gsap.to('[id^="the_secret_of_change-"]', {
     scrollTrigger: {
       trigger: "#the_secret_of_change-0",
-      start: "40% 70%",
-      end: "bottom 20%",
-      scrub: true
-      //   markers: true
+      start: "top center", // start "top center" when top of image hits top of viewport
+      end: "bottom center", //end "bottom center" when bottom of image hits bottom of viewport
+      scrub: 3,
+      markers: true
       //   toggleActions: "restart none reverse reverse" // onEnter onLeave onEnterBack onLeaveBack
     },
     opacity: 1,
