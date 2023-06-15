@@ -218,8 +218,8 @@ onMounted(() => {
       trigger: "#the_secret_of_change-0",
       start: "top center", // start "top center" when top of image hits top of viewport
       end: "bottom center", //end "bottom center" when bottom of image hits bottom of viewport
-      scrub: 3,
-      markers: true
+      scrub: 3
+      //   markers: true
       //   toggleActions: "restart none reverse reverse" // onEnter onLeave onEnterBack onLeaveBack
     },
     opacity: 1,
