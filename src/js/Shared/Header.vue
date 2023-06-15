@@ -19,9 +19,10 @@
               />
             </svg>
           </label>
+
           <ul
             tabindex="0"
-            class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            class="p-2 shadow menu dropdown-hover dropdown-content bg-base-100 text-secondary rounded-box w-52"
           >
             <li>
               <Link href="/">
@@ -51,8 +52,8 @@
           </ul>
         </div>
       </div>
-      <Link href="/">
-        <h1>{{ props.site.name }}</h1>
+      <Link href="/" class="text-white">
+        <Logo />
       </Link>
     </div>
     <div class="navbar-center hidden lg:flex">
@@ -65,20 +66,11 @@
         <Link class="btn btn-ghost btn-sm rounded-btn" href="#">downloads</Link>
       </div>
     </div>
-    <div class="navbar-end">
-      <a class="btn">Button</a>
-    </div>
   </header>
-  <!-- <Link class="link link-hover" href="#">why storkmentors</Link>
-    <Link class="link link-hover" href="#">career transition</Link>
-    <Link class="link link-hover" href="#">life transition</Link>
-    <Link class="link link-hover" href="#">mentors</Link>
-    <Link class="link link-hover" href="#">stories</Link>
-    <Link class="link link-hover" href="#">downloads</Link>
-  <Link class="link link-hover" href="#">dashboard</Link>-->
 </template>
 
 <script setup>
+import Logo from "@/Shared/Logo.vue";
 import { Link, usePage } from "@inertiajs/inertia-vue3";
 
 const { props } = usePage();
