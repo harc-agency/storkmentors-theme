@@ -62,64 +62,78 @@
       </div>
     </div>
 
-    <Slider :slides="slides" :delay="2000" />
+    <section>
+      <Slider :slides="slides" :delay="3000" :speed="1000" />
+    </section>
 
-    <!-- When Change is imminent -->
-    <div class="bg-[#ff9040]">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 place-content-center">
-        <img :src="mediaObject.image.url" alt />
-        <div class="p-4">
-          <h2 class="text-3xl font-bold">{{ mediaObject.title }}</h2>
-          <div class="text-lg leading-10 font-semibold mb-4 mt-2" v-html="mediaObject.description"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Where are you going? -->
-
-    <div class="p-4">
-      <h1 class="text-center text-5xl mb-5">
-        Where are
-        <span class="text-orange-500">you</span>
-        going?
-      </h1>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div
-          class="card shadow-xl image-full bg-cover h-64 min-h-full"
-          v-for="(link, index) in linksItems"
-          :key="index"
-          :style="`background-image: url(${link.image})`"
-        >
-          <div class="card-body p-12">
-            <span>
-              <Link :href="link.url" class="btn btn-secondary hover:btn-primary">
-                <span class="card-title text-white">{{ link.title }}</span>
-              </Link>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- the secret of change -->
-      <div class="relative my-10" id="the_secret_of_change">
-        <img :src="path('images/s26.jpg')" alt class="w-full" />
-        <div class="absolute inset-0 bg-gradient-to-l from-transparent to-white">
-          <div class="text-1xl md:text-4xl font-bold p-0 md:p-10">
-            <div id="the_secret_of_change-0" class="text-2xl lg:mb-10 pl-[16px]">it has been said,</div>
-            <div id="the_secret_of_change-1" class="lg:mb-10 pl-[32px]">'the secret of change is to</div>
-            <div id="the_secret_of_change-2" class="lg:mb-10 pl-[48px]">focus all of your energy</div>
-            <div id="the_secret_of_change-3" class="lg:mb-10 pl-[64px]">not on fighting the old, but</div>
-            <div id="the_secret_of_change-4" class="lg:mb-10 pl-[80px]">on building</div>
-            <div id="the_secret_of_change-5" class="lg:mb-10 pl-[96px]">the new.'</div>
+    <section>
+      <!-- When Change is imminent -->
+      <div class="bg-[#ff9040]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 place-content-center">
+          <img :src="mediaObject.image.url" alt />
+          <div class="p-4">
+            <h2 class="text-3xl font-bold">{{ mediaObject.title }}</h2>
             <div
-              id="the_secret_of_change-6"
-              class="text-4xl md:text-7xl font-bold text-primary"
-            >Let's build the new.</div>
+              class="text-lg leading-10 font-semibold mb-4 mt-2"
+              v-html="mediaObject.description"
+            ></div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section>
+      <!-- Where are you going? -->
+      <div class="p-4">
+        <h1 class="text-center text-5xl mb-5">
+          Where are
+          <span class="text-orange-500">you</span>
+          going?
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div
+            class="card shadow-xl image-full bg-cover h-64 min-h-full"
+            v-for="(link, index) in linksItems"
+            :key="index"
+            :style="`background-image: url(${link.image})`"
+          >
+            <div class="card-body p-12">
+              <span>
+                <Link :href="link.url" class="btn btn-secondary hover:btn-primary">
+                  <span class="card-title text-white">{{ link.title }}</span>
+                </Link>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- the secret of change -->
+        <div class="relative my-10" id="the_secret_of_change">
+          <img :src="path('images/s26.jpg')" alt class="w-full" />
+          <div class="absolute inset-0 bg-gradient-to-l from-transparent to-white">
+            <div class="text-1xl md:text-4xl font-bold p-0 md:p-10">
+              <div id="the_secret_of_change-0" class="text-2xl lg:mb-10 pl-[16px]">it has been said,</div>
+              <div id="the_secret_of_change-1" class="lg:mb-10 pl-[32px]">
+                'the secret of
+                <span class="text-primary">change</span> is to
+              </div>
+              <div id="the_secret_of_change-2" class="lg:mb-10 pl-[48px]">focus all of your energy</div>
+              <div
+                id="the_secret_of_change-3"
+                class="lg:mb-10 pl-[64px]"
+              >not on fighting the old, but</div>
+              <div id="the_secret_of_change-4" class="lg:mb-10 pl-[80px]">on building</div>
+              <div id="the_secret_of_change-5" class="lg:mb-10 pl-[96px]">the new.'</div>
+              <div
+                id="the_secret_of_change-6"
+                class="text-4xl md:text-7xl font-bold text-primary"
+              >Let's build the new.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -216,9 +230,9 @@ onMounted(() => {
   gsap.to('[id^="the_secret_of_change-"]', {
     scrollTrigger: {
       trigger: "#the_secret_of_change-0",
-      start: "top center", // start "top center" when top of image hits top of viewport
-      end: "bottom center", //end "bottom center" when bottom of image hits bottom of viewport
-      scrub: 3
+      start: "top center",
+      end: "bottom center",
+      scrub: 3 //  scrub - true or number to smoothness
       //   markers: true
       //   toggleActions: "restart none reverse reverse" // onEnter onLeave onEnterBack onLeaveBack
     },
