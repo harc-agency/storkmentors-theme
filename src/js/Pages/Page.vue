@@ -6,14 +6,6 @@
             <div v-html="props.page.post_content"></div>
         </section>
 
-        <div>
-
-            <h1>Page:</h1>
-            <h3>{{ props.page.post_title }}</h3>
-            <div v-html="props.page.post_content"></div>
-            
-        </div>
-
 </template>
 
 <script setup>
