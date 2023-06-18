@@ -62,6 +62,8 @@
       </div>
     </div>
 
+    <section class="w-full bg-green-500 xs:bg-amber-500 sm:bg-blue-500 md:bg-red-500 lg:bg-orange-500"> </section>
+
     <section>
       <Slider :slides="slides" :delay="3000" :speed="1000" />
     </section>
@@ -84,10 +86,10 @@
 
     <section>
       <!-- Where are you going? -->
-      <div class="p-4">
+      <div class="pt-8">
         <h1 class="text-center text-5xl mb-5">
           Where are
-          <span class="text-orange-500">you</span>
+          <span class="text-primary">you</span>
           going?
         </h1>
 
@@ -142,16 +144,12 @@ import Slider from "@/Components/Slider.vue";
 import { Link, usePage } from "@inertiajs/inertia-vue3";
 import { ref, reactive, computed, onMounted } from "vue";
 import { gsap } from "gsap";
-//ScrollTrigger
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { path } from "@/helper/theme";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const { props } = reactive(usePage());
-// props.site
-// props.post
-// props.fields
+const { props } = reactive(usePage()); // props.site, props.post, props.fields
 
 const linksItems = ref([
   {

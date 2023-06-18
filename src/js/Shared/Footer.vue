@@ -1,5 +1,6 @@
 <template>
-  <footer class="footer p-10 bg-base-200 text-base-content">
+   
+  <footer class="footer p-5">
     <div>
       <p>
         ACME Industries Ltd.
@@ -7,7 +8,8 @@
       </p>
     </div>
 
-    <div>
+    
+    <div> 
       <span class="footer-title">Services</span>
       <a class="link link-hover">Branding</a>
       <a class="link link-hover">Design</a>

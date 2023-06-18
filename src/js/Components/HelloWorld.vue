@@ -5,8 +5,8 @@
 </template>
 
 <script setup>
-import { usePage } from "@inertiajs/inertia-vue3";
-const { props } = usePage();
+import { usePage } from "@inertiajs/inertia-vue3"
+const { props } = usePage()
 </script>
 
 <style>
