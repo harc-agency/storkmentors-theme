@@ -36,8 +36,6 @@ li,
 blockquote,
 pre,
 dd,
-dt,
-
-{
-margin-bottom: 1rem;
+dt {
+    margin-bottom: 1rem;
 }
