@@ -100,7 +100,7 @@
 
             <!-- the secret of change -->
             <div class="relative my-10 w-9/12 m-auto" id="the_secret_of_change">
-                <img :src="path('images/s26.jpg')" alt class="w-full" />
+                <img :src="path('images/s26.jpg')" alt class="blur-[4px] w-full" />
                 <div class="absolute inset-0 bg-gradient-to-l from-transparent to-white">
                     <div class="text-1xl md:text-4xl font-bold p-0 md:p-10">
                         <div id="the_secret_of_change-0" class="text-2xl lg:mb-10 pl-[16px]">it has been said,</div>
