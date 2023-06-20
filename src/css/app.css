@@ -2,11 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
-/* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100&display=swap');
-
-
 /* layout contains the structure of the page */
 @import 'layout.css';
 

@@ -8,7 +8,7 @@
             {{ page.props.post.post_title }}
         </h2>
         <div
-            class="bg-white p-5 rounded-md shadow-md">
+            class="bg-white text-black p-5 rounded-md shadow-md">
             <div v-html="page.props.post.post_content" />
         </div>
     </div>

@@ -8,7 +8,7 @@
 body {
     font-family: 'Jost', sans-serif;
     font-weight: 900;
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
 }
 
 h1 {
@@ -18,8 +18,3 @@ h1 {
 h2 {
     font-family: 'Comfortaa', sans-serif;
 }
-
-/* 
-set all the text with block elements to have a margin-bottom of 1rem
-
-*/

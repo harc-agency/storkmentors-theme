@@ -52,8 +52,6 @@
         </div>
     </div>
 
-    <section class="w-full bg-green-500 xs:bg-amber-500 sm:bg-blue-500 md:bg-red-500 lg:bg-orange-500"> </section>
-
     <section>
         <Slider :slides="slides" :delay="3000" :speed="1000" />
     </section>
@@ -92,7 +90,7 @@
                         <span>
                             <Link
                                 as="button"
-                                :href="link.url" class="btn btn-secondary hover:btn-primary">
+                                :href="link.url" class="border-secondary backdrop-blur-sm min-w-full btn btn-transparent hover:btn-primary">
                                 <span class="card-title text-white">{{ link.title }}</span>
                             </Link>
                         </span>
@@ -128,33 +126,37 @@
             </div>
         </div>
     </section>
+
     <section class="py-10 bg-gray-50 overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap -m-4">
-                <div class="w-full md:w-1/2 p-4">
-                    <div class="py-16 px-8 h-full rounded-3xl" :style="`background-image: url('${path('/images/Emails.png')}'); background-size: cover; background-position: center; background-repeat: no-repeat;`"></div>
-                </div>
-                <div class="w-full md:w-1/2 p-4">
-                    <div class="py-16 lg:py-16 px-8 text-center h-full bg-white overflow-hidden rounded-3xl">
-                        <div class="max-w-md mx-auto">
-                            <h2 class="font-heading mb-8 text-4xl md:text-5xl text-gray-900 font-black tracking-tight">Subscribe and receive updates</h2>
-                            <div class="max-w-sm mx-auto">
-                                <div class="flex flex-wrap -m-2">
-                                    <div class="w-full md:flex-1 p-2">
-                                        <input class="px-6 py-3.5 w-full text-lg text-gray-500 font-bold bg-gray-100 outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 rounded-full" id="newsletterLightReverseInput2-1" type="text" placeholder="Email address">
-                                    </div>
-                                    <div class="w-full md:w-auto p-2">
-                                        <div class="flex flex-wrap justify-center -m-2">
-                                            <div class="w-full md:w-auto p-2"><a class="block w-full px-8 py-3.5 text-lg text-center text-secondary font-bold border bg-transparent hover:bg-primary focus:ring-2 focus:ring-primary rounded-full" href="#">Sign Up</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!--
+            style up a heading for the Gazette
+         -->
+        <div class="text-center px-20">
+            <h1 class="text-5xl font-bold mb-5">
+                The
+                <span class="text-primary">Gazette</span>
+            </h1>
+            <div class="text-lg leading-10 font-semibold mb-4 mt-2">
+                <p>
+                    The Gazette is a monthly newsletter that provides a
+                    <span class="text-primary">curated list of the best</span>
+                    articles and resources on
+                    <span class="text-primary">personal growth</span>,
+                    <span class="text-primary">productivity</span>,
+                    <span class="text-primary">mental models</span>,
+                    <span class="text-primary">decision making</span>,
+                    <span class="text-primary">and more</span>.
+                </p>
+                <p>
+                    It's a
+                    <span class="text-primary">short, fun, and insightful</span>
+                    read that will
+                    <span class="text-primary">leave you better</span>
+                    than you were before.
+                </p>
             </div>
         </div>
+        <div v-html="props.shortcodes.newletter_form" class="p-20"></div>
     </section>
 </div>
 </template>
