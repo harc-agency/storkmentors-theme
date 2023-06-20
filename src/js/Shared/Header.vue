@@ -1,67 +1,130 @@
 <template>
-<header class="navbar bg-secondary text-white">
-    <div>
-        <div class="navbar-start">
-            <div class="dropdown">
-                <label tabindex="0" class="btn btn-ghost text-white lg:hidden">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16"/>
-                    </svg>
-                </label>
+<header class="flex align-center p-4 bg-secondary text-white">
+    <a href="/" class="text-white">
+        <Logo />
+    </a>
 
-                <ul
-                    tabindex="0"
-                    class="p-2 shadow menu dropdown-hover dropdown-content bg-base-100 text-secondary rounded-box w-52">
-                    <li>
-                        <Link href="/">
-                            <h1>{{ props.site.name }}</h1>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link style="margin-left: 1rem" href="/sample-page">Sample Page</Link>
-                    </li>
-                    <li>
-                        <Link href="/this-page-does-not-exist">404 Page</Link>
-                    </li>
-                    <li>
-                        <a>Parent</a>
-                        <ul class="p-2">
-                            <li>
-                                <a>Submenu 1</a>
-                            </li>
-                            <li>
-                                <a>Submenu 2</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a>Item 3</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <Link href="/" class="text-white">
-            <Logo />
-        </Link>
+    <!-- mobile menu -->
+    <div class="dropdown lg:hidden">
+        <label tabindex="0" class="btn btn-ghost m-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"/>
+            </svg>
+        </label>
+
+        <ul tabindex="0" class="text-[.75em] justify-start dropdown-menu dropdown-content shadow menu  max-w-xs w-64 bg-secondary">
+            <!-- dropdown-content -->
+            <li v-for=" (link, index) in page.props.menu" :key="index">
+                <details class="" open v-if="link.children.length">
+                    <summary class=" "> {{ link.title }} </summary>
+                    <ul class="ml-1 justify-start">
+                        <li v-for=" (child, i) in link.children" :key="i"
+                            class="ml-n3 border border-t-0 border-l-1 border-r-0 border-b-0 border-neutral-400" >
+                            <details open v-if="child.children.length" class="ml-3">
+                                <summary>{{ child.title }}</summary>
+                                <ul class="ml-1 ">
+                                    <li v-for="(grandchild, j) in child.children" :key="j"
+                                        class="ml-n3 border border-t-0 border-l-1 border-r-0 border-b-0 border-neutral-400">
+                                        <details v-if="grandchild.children.length">
+                                            <summary>{{ grandchild.title }}</summary>
+                                            <ul
+                                                class="ml-3">
+                                                <li v-for=" (greatgrandchild, k) in grandchild.children" :key="k" class="ml-4">
+                                                    <Link :href="greatgrandchild.url" class="   ">
+                                                        {{ greatgrandchild.title }}
+                                                    </Link>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                        <Link v-else  :href="grandchild.url" class="   ">
+                                            {{ grandchild.title }}
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </details>
+                            <Link as="a" v-else :href="child.url" class="    ">
+                                {{ child.title }}
+                            </Link>
+                        </li>
+                    </ul>
+                </details>
+                <Link as="a" v-else  :href="link.url"
+                      :class="{'active': isCurrentUrl(link.url)}"
+                      class="">
+                    {{ link.title }}
+                </Link>
+            </li>
+        </ul>
     </div>
-    <div class="navbar-center hidden lg:flex">
-        <div class="flex items-stretch">
-            <Link class="btn btn-ghost btn-sm rounded-btn" href="#">why storkmentors</Link>
-            <Link class="btn btn-ghost btn-sm rounded-btn" href="#">career transition</Link>
-            <Link class="btn btn-ghost btn-sm rounded-btn" href="#">life transition</Link>
-            <Link class="btn btn-ghost btn-sm rounded-btn" href="#">mentors</Link>
-            <Link class="btn btn-ghost btn-sm rounded-btn" href="#">stories</Link>
-            <Link class="btn btn-ghost btn-sm rounded-btn" href="#">downloads</Link>
-        </div>
+
+    <!-- desktop -->
+    <div class="relative navbar-center hidden lg:flex">
+        <ul class="flex ">
+            <li tabindex="0" v-for=" (link, index) in page.props.menu" :key="index">
+                <details v-if="link.children.length">
+                    <summary class="btn btn-ghost text-sm btn-sm rounded-btn">
+                        <span class="text-sm">
+                            {{ link.title }}
+                        </span><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <ul class="  flex flex-col bg-secondary p-2 absolute    ">
+                        <li v-for=" (children, index) in link.children"
+                            :key="index"
+                            class="btn btn-ghost hover:bg-[#505050]">
+                            <details v-if="children.length">
+                                <summary> {{ children.title }} </summary>
+                                <ul>
+                                    <li v-for=" (grandchild, index) in children.children" :key="index">
+                                        <details v-if="grandchild.children.length">
+                                            <summary> {{ grandchild.title }} </summary>
+                                            <ul>
+                                                <li v-for=" (greatgrandchild, index) in grandchild.children" :key="index">
+                                                    <Link
+                                                        v-if="greatgrandchild.url === page.url"
+                                                        :href="greatgrandchild.url" class=" btn btn-ghost btn-sm  ">
+                                                        {{ greatgrandchild.title }}
+                                                    </Link>
+                                                    <a
+                                                        v-else
+                                                        :href="greatgrandchild.url" class=" btn btn-ghost btn-sm  ">
+                                                        {{ greatgrandchild.title }}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                        <Link
+                                            :class="{'active': isCurrentUrl(link.url)}"
+                                            v-else :href="grandchild.url" class=" btn btn-ghost btn-sm  ">
+                                            {{ grandchild.title }}
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </details>
+
+                            <Link :href="children.url"
+                                  as="a"
+                                  :class="{'link': isCurrentUrl(link.url)}"
+                                  class="btn btn-ghost btn-sm rounded-btn">
+                                {{ children.title }}
+                            </Link>
+                        </li>
+                    </ul>
+                </details>
+
+                <Link v-else
+                      :class="{'link': isCurrentUrl(link.url)}"
+                      :href="link.url" class="btn btn-ghost btn-sm rounded-btn">
+                    {{ link.title }}
+                </Link>
+            </li>
+        </ul>
     </div>
 </header>
 </template>
@@ -69,8 +132,26 @@
 <script setup>
 import Logo from "@/Shared/Logo.vue"
 import { Link, usePage } from "@inertiajs/inertia-vue3"
+import { onMounted, reactive } from "vue"
 
-const { props } = usePage()
+const page = reactive(usePage())
+
+//make reactive
+const isCurrentUrl = url => (new URL(url, window.location.origin)).pathname === window.location.pathname
+
+onMounted(() => {
+    //compare / to http://localhost:3001/ these are the same 
+    //use Url params to get the current url
+
+    document.querySelectorAll("details").forEach(details => {
+
+        details.addEventListener("mouseleave", event => {
+            setTimeout(() => {
+                event.target.removeAttribute("open")
+            }, 3000)
+        })
+    })
+})
 </script>
 
 <style></style>

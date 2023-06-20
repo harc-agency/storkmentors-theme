@@ -1,6 +1,5 @@
 <template>
 <Header />
-<!-- force main to fill in the remaining space of header and footer -->
 <main>
     <slot></slot>
 </main>

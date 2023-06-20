@@ -23,19 +23,3 @@ h2 {
 set all the text with block elements to have a margin-bottom of 1rem
 
 */
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li,
-blockquote,
-pre,
-dd,
-dt {
-    margin-bottom: 1rem;
-}

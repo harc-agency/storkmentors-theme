@@ -2,11 +2,10 @@
 <footer class="footer p-5">
     <div>
         <h1 class=" text-primary text-2xl ">
-            StorkMentors
+            <Link href="/" :preserve-scroll="true">
+                StorkMentors
+            </Link>
         </h1>
-        <p>
-            Lorem ipsum dolor
-        </p>
     </div>
 
     <div>
@@ -34,6 +33,9 @@
 </footer>
 </template>
 
-<script setup></script>
+<script setup>
+import { Link } from "@inertiajs/inertia-vue3"
+
+</script>
 
 <style></style>

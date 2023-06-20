@@ -15,20 +15,24 @@ module.exports = {
                     success: "#22B522",
                     warning: "#ff9900",
                     error: "#D54B21"
-                },
-                "storkmentor-dark": {
-                    primary: "#f6623e",
-                    secondary: "#454545",
-                    ternary: "#61a6ab",
-                    accent: "#fff7c3",
-                    "base-100": "#454545",
-                    info: "#2094f3",
-                    success: "#61a6ab",
-                    warning: "#ff9900",
-                    error: "#ff5724"
-
                 }
+
             }
         ]
+    },
+    theme: {
+        extend: {
+            colors: {
+                primary: "#f6623e",
+                secondary: "#454545",
+                ternary: "#61a6ab",
+                accent: "#fff7c3",
+                "base-100": "#ffffff",
+                info: "#2094f3",
+                success: "#22B522",
+                warning: "#ff9900",
+                error: "#D54B21"
+            }
+        }
     }
 }

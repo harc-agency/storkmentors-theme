@@ -12,3 +12,5 @@
 
 /* typography contains the font styles and sizes for the page */
 @import 'typography.css';
+
+@import 'daisyui.css';

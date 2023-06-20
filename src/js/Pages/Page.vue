@@ -1,15 +1,24 @@
 <template>
-<section class=" p-5 bg-slate-100 sm:bg-slate-200 md:bg-slate-400 lg:bg-slate-600 lg:text-white ">
-    <h1>Page:</h1>
-    <h3>{{ props.page.post_title }}</h3>
-    <div v-html="props.page.post_content" />
+<section class="">
+    <div class="p-2 lg:p-20
+        bg-gradient-to-r from-ternary to-ternary via-[#39c840]
+        text-white
+    ">
+        <h2 class="mb-4 lg:mb-10">
+            {{ page.props.post.post_title }}
+        </h2>
+        <div
+            class="bg-white p-5 rounded-md shadow-md">
+            <div v-html="page.props.post.post_content" />
+        </div>
+    </div>
 </section>
 </template>
 
 <script setup>
 import { usePage } from "@inertiajs/inertia-vue3"
-
-const { props } = usePage()
+import { reactive } from "vue"
+const page = reactive(usePage())
 
 </script>
 
