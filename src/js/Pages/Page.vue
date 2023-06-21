@@ -5,7 +5,7 @@
         text-white
     ">
     <h2 class="mb-4 lg:mb-10">
-      {{ page.props.post.post_title }}
+      Page: {{ page.props.post.post_title }}
     </h2>
     <div
       class="bg-white text-black p-5 rounded-md shadow-md">
@@ -18,6 +18,7 @@
 <script setup>
 import { usePage } from "@inertiajs/inertia-vue3"
 import { reactive } from "vue"
+
 const page = reactive(usePage())
 
 </script>

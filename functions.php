@@ -33,17 +33,11 @@ add_action('after_setup_theme', function () {
 });
 
 // INERTIA SHARE
-add_action('init', function () {
-
-    // Synchronously using array
-    Inertia::share([
-        'menu' => transform_wp_get_nav_menu_items('main-menu'),
-    ]);
-
-
+add_action('init', function ($data) {
 
     // Multiple values
     Inertia::share([
+        'menu' => transform_wp_get_nav_menu_items('main-menu'),
         // Synchronously
         'site' => [
             'name' => get_bloginfo('name'),
