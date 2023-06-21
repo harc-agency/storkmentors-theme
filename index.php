@@ -7,7 +7,6 @@ use BoxyBird\Inertia\Inertia;
 if (is_front_page()) {
     $data = [
         'post' => transform_get_post(),
-        'menu' => transform_wp_get_nav_menu_items('main-menu'),
         'fields' => get_fields(),
         'shortcodes' => [
             'contact_form' => do_shortcode('[gravityform id="1" title="true" ajax="true"]'),
@@ -22,7 +21,6 @@ if (is_front_page()) {
 if (is_home()) {
     $data = [
         // 'post' => get_post(),
-        'menu' => transform_wp_get_nav_menu_items('main-menu'),
         'posts' => get_posts(), //transform_posts_data(get_posts()),
         'fields' => get_fields(),
     ];
@@ -140,7 +138,6 @@ if (is_singular('product')) {
 
         'product' => json_decode(wc_get_product(get_the_ID())),
         'product_details' => $productDetails,
-        'menu' => transform_wp_get_nav_menu_items('main-menu'),
         'cart' => $cart,
         // 'shortcodes' => []
 
@@ -154,7 +151,6 @@ if (is_singular('product')) {
 if (is_single()) {
 
     $data = [
-        'menu' => transform_wp_get_nav_menu_items('main-menu'),
         'post' => transform_get_post(),
     ];
     // dd($data);
@@ -164,7 +160,6 @@ if (is_single()) {
 
 if (is_page()) {
     $data = [
-        'menu' => transform_wp_get_nav_menu_items('main-menu'),
         'post' => get_post(),
         'fields' => get_fields(),
     ];
