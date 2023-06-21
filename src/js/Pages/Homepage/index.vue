@@ -138,7 +138,7 @@
       </h1>
       <div class="text-lg leading-10 font-semibold mb-4 mt-2">
         <p>
-          The Gazette is a monthly newsletter that provides a
+          The Gazette is our monthly newsletter that provides a
           <span class="text-primary">curated list of the best</span>
           articles and resources on
           <span class="text-primary">personal growth</span>,
