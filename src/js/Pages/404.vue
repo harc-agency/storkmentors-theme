@@ -1,6 +1,6 @@
 <template>
 <section>
-    <h1>{{ props.content }}</h1>
+  <h1>{{ props.content }}</h1>
 </section>
 </template>
 

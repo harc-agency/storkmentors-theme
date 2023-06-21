@@ -1,10 +1,10 @@
 <template>
 <div>
-    <pre class="text-sm">{{ props.product }}</pre>
-    <pre class="text-sm">{{ props.product_details }}</pre>
+  <pre class="text-sm">{{ props.product }}</pre>
+  <pre class="text-sm">{{ props.product_details }}</pre>
 
-    <div v-html="props.product_details.description"></div>
-    <div v-html="props.product_details.short_description"></div>
+  <div v-html="props.product_details.description"></div>
+  <div v-html="props.product_details.short_description"></div>
 </div>
 </template>
 
