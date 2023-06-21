@@ -33,6 +33,15 @@ if (is_home()) {
 if (is_product()) {
 
     $product = json_decode(wc_get_product(get_the_ID()));
+
+    $data = [
+        'product' => $product,
+        'wc_product' => do_shortcode('[product_page id="' . get_the_ID() . '"]'),
+    ];
+    // dd($data);
+
+    return Inertia::render('Woocommerce/Product', $data);
+
     // $productDetails = [
     //     // Get Product General Info
 
@@ -118,15 +127,6 @@ if (is_product()) {
     //     'average_rating' => $product->get_average_rating(),
     //     'review_count' => $product->get_review_count(),
     // ];
-    $data = [
-
-        'product' => do_shortcode('[product_page id="' . get_the_ID() . '"]'),
-    ];
-    // dd($data);
-
-
-
-    return Inertia::render('Woocommerce/Product', $data);
 }
 
 // woo commerce cart
