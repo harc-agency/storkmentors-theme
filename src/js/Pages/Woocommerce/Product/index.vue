@@ -9,10 +9,13 @@
 <script setup>
 
 import { usePage } from "@inertiajs/inertia-vue3"
-import { reactive } from "vue"
+import { reactive, onMounted } from "vue"
 const { props } = reactive(usePage())
 
 </script>
 
-<style scoped>
+<style lang="scss">
+.woocommerce{
+
+}
 </style>

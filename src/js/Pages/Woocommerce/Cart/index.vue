@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="p-4 lg:p-20">
+  <div class="p-4 lg:p-20">
     <h1>
       cart <span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -22,5 +22,13 @@ const page = reactive(usePage())
 
 </script>
 
-<style scoped>
+<style lang="scss">
+.woocommerce{
+    .product-remove{
+        @apply
+        text-red-500
+        lg:text-4xl
+        ;
+    }
+}
 </style>

@@ -28,8 +28,10 @@ const page = reactive(usePage())
 
 </script>
 
-<style scoped>
-.woocommerce-info{
-    color:red
+<style  lang="scss" >
+
+.woocommerce{
+
 }
+
 </style>
