@@ -79,10 +79,10 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
             </svg>
           </summary>
-          <ul class="  flex flex-col bg-secondary p-2 absolute    ">
-            <li v-for=" (children, index) in link.children"
-                :key="index"
-                class="btn btn-ghost hover:bg-[#505050]">
+          <ul class="  flex flex-col bg-secondary p-2 absolute  z-10  ">
+            <Link as="li" v-for=" (children, index) in link.children"
+                  :key="index" :href="children.url"
+                  class="btn btn-ghost hover:bg-[#505050]">
               <details v-if="children.length">
                 <summary> {{ children.title }} </summary>
                 <ul>
@@ -112,18 +112,13 @@
                   </li>
                 </ul>
               </details>
-
-              <Link :href="children.url"
-                    as="a"
-                    :class="{'link': isCurrentUrl(link.url)}"
-                    class="btn btn-ghost btn-sm rounded-btn">
-                {{ children.title }}
-              </Link>
-            </li>
+              <span v-else>{{ children.title }}</span>
+            </Link>
           </ul>
         </details>
 
         <Link v-else
+              as="a"
               :class="{'link': isCurrentUrl(link.url)}"
               :href="link.url" class="btn btn-ghost btn-sm rounded-btn">
           {{ link.title }}
@@ -155,13 +150,29 @@ onMounted(() => {
 
         details.addEventListener("mouseleave", event => {
             timeoutDetailsId = setTimeout(() => {
-                event.target.removeAttribute("open")
+                details.removeAttribute("open")
+
             }, 3000)
         })
     })
 })
 </script>
 
-<style scoped>
+<style lang="scss">
+#main-menu-desktop{
+ ul{
+    li{
+       a{
+
+            text-transform: unset;
+
+        }
+        summary{
+            text-transform: unset;
+        }
+
+    }
+  }
+}
 
 </style>

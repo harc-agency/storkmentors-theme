@@ -31,7 +31,16 @@ const page = reactive(usePage())
 <style  lang="scss" >
 
 .woocommerce{
-
+    // input border
+    input{
+        @apply
+        border
+        border-gray-300
+        rounded
+        px-4
+        py-2
+        ;
+    }
 }
 
 </style>
