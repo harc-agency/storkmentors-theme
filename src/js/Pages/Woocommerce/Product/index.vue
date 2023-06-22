@@ -30,5 +30,9 @@ const { props } = reactive(usePage())
     .added_to_cart{
         @apply btn hover:bg-primary justify-center items-center;
     }
+    button.single_add_to_cart_button{
+        @apply btn hover:bg-primary justify-center items-center;
+    }
+
 }
 </style>
