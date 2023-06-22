@@ -1,6 +1,14 @@
 <template>
 <article :id="props.post.id" class="post p-4">
   <header class="entry-header mb-4">
+    <!--
+        Back to main blog page link
+     -->
+    <div class="mb-4">
+      <Link as="a" href="/blog" class="text-sm text-gray-700 hover:text-gray-900">
+        &larr; All Posts
+      </Link>
+    </div>
     <h1 class="entry-title text-2xl lg:text-5xl font-extrabold leading-tight mb-1">
       <a :href="props.post.post_link" rel="bookmark">{{ props.post.post_title }}</a>
     </h1>
@@ -21,9 +29,10 @@
 </template>
 
 <script setup>
-import { usePage } from "@inertiajs/inertia-vue3"
+import { Link, usePage } from "@inertiajs/inertia-vue3"
 
 const { props } = usePage()
 </script>
 
 <style></style>
+
