@@ -18,16 +18,7 @@ if (is_front_page()) {
     return Inertia::render('Homepage', $data);
 }
 
-if (is_home()) {
-    $data = [
-        // 'post' => get_post(),
-        'posts' => get_posts(), //transform_posts_data(get_posts()),
-        'fields' => get_fields(),
-    ];
-    // dd($data);
 
-    return Inertia::render('Index', $data);
-}
 
 // woo commerce product page
 if (is_product()) {
@@ -188,4 +179,17 @@ if (is_404()) {
     // dd($data);
 
     return Inertia::render('404', $data);
+}
+
+// blog page, archive page, category page, 
+if (is_home()) {
+    $data = [
+
+        // 'post' => get_post(),
+        'posts' => get_posts(), //transform_posts_data(get_posts()),
+        'fields' => get_fields(),
+    ];
+    // dd($data);
+
+    return Inertia::render('Index', $data);
 }
