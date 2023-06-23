@@ -2,7 +2,12 @@
 <div>
   <div class="p-4 lg:p-20 relative">
     <div class="relative">
-      cart
+      <Link
+        as="a"
+        href="/shop"
+        class="text-sm text-gray-700 hover:text-gray-900">
+        &larr;  Continue Shopping
+      </Link>
       <svg
         id="cart-icon"
         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -16,7 +21,7 @@
 
 <script setup>
 import { reactive, onMounted } from "vue"
-import { usePage } from "@inertiajs/inertia-vue3"
+import { Link, usePage } from "@inertiajs/inertia-vue3"
 import { gsap } from "gsap"
 
 const page = reactive(usePage())
