@@ -32,7 +32,7 @@ onMounted(() => {
         opacity: 1,
         y: 0,
         stagger: 0.25,
-        duration: 2
+        duration: .5
     })
 })
 </script>
