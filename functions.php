@@ -1,13 +1,16 @@
 <?php
-
-use BoxyBird\Inertia\Inertia;
-
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/helpers/logs.php';
 require_once __DIR__ . '/helpers/transformers.php';
 
+use BoxyBird\Inertia\Inertia;
 
 
+//after theme setup
+add_action('after_setup_theme', function () {
+    (new \Symfony\Component\Dotenv\Dotenv())->load(__DIR__ . '/.env');
+    // dd($_ENV['WORDPRESS_ENV']);
+});
 
 
 // Enqueue scripts.
@@ -18,6 +21,7 @@ add_action('wp_enqueue_scripts', function () {
 
 // Share globally with Inertia views
 add_action('after_setup_theme', function () {
+    // dd($_ENV['WORDPRESS_ENV']);
     Inertia::share([
         'site' => [
             'name'        => get_bloginfo('name'),

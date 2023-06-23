@@ -7,12 +7,13 @@ use BoxyBird\Inertia\Inertia;
 if (is_front_page()) {
     $data = [
         'post' => transform_get_post(),
-        'fields' => collect(get_fields()),
+        'fields' => get_fields(),
         'shortcodes' => [
             'contact_form' => do_shortcode('[gravityform id="1" title="true" ajax="true"]'),
             'newletter_form' => do_shortcode('[gravityform id="2" title="true" ajax="true"]')
         ],
     ];
+
     // dd($data);
 
     return Inertia::render('Homepage', $data);
