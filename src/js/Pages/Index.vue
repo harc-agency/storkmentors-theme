@@ -25,9 +25,12 @@
                   <div class="md:max-w-lg p-10 h-full">
                     <div class="flex flex-col justify-between h-full">
                       <div class="flex-initial mb-8">
-                        <p class="mb-3 text-sm text-gray-500 font-bold">Design process • 4 min read</p><a class="group inline-block mb-4" href="#">
+                        <p class="mb-3 text-sm text-gray-500 font-bold">Design process • 4 min read</p>
+
+                        <Link as="a" :href="post.post_name">
                           <h3 class="font-heading text-2xl text-gray-900 hover:text-gray-700 group-hover:underline font-black">{{post.post_title}}</h3>
-                        </a>
+                        </Link>
+
                         <p class="text-gray-500 font-bold">{{post.post_excerpt}}</p>
                       </div>
                       <div class="flex-initial">
