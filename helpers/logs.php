@@ -1,11 +1,15 @@
 <?php
 //dd function
 if (!function_exists('dd')) {
-    function dd($data)
+    //should take multiple arguments
+    function dd(...$data)
     {
-        echo '<pre>';
-        echo json_encode($data, true);
-        echo '</pre>';
+        foreach ($data as $arg) {
+
+            echo '<pre>';
+            echo json_encode($arg);
+            echo '</pre>';
+        }
         die();
     }
 }
