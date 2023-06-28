@@ -77,15 +77,14 @@ if (is_single()) {
 }
 
 
-// is page
+// why stork mentors page
 if (is_page('why-storkmentors')) {
-    $data = [
-        'post' => get_post(),
-        'fields' => get_fields(),
-    ];
-    // dd($data);
+    return Inertia::render('WhyStorkMentors', []);
+}
 
-    return Inertia::render('WhyStorkMentors', $data);
+// why stork mentors page
+if (is_page('our-team')) {
+    return Inertia::render('OurTeam', []);
 }
 
 
