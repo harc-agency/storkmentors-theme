@@ -76,6 +76,19 @@ if (is_single()) {
     return Inertia::render('Single', $data);
 }
 
+
+// is page
+if (is_page('why-storkmentors')) {
+    $data = [
+        'post' => get_post(),
+        'fields' => get_fields(),
+    ];
+    // dd($data);
+
+    return Inertia::render('WhyStorkMentors', $data);
+}
+
+
 // is page
 if (is_page()) {
     $data = [

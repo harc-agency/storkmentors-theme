@@ -181,39 +181,39 @@ const linksItems = ref([
         image: path("/images/g1.webp")
     },
     {
-        url: "#",
+        url: "/web-dev-school",
         title: "WebDev School",
         image: path("/images/g2.webp")
     },
     {
-        url: "#",
+        url: "live-online-classes",
         title: "Live Online Classes",
         image: path("/images/g3.webp")
 
     },
     {
-        url: "#",
+        url: "bi-annual-summit",
         title: "Bi-Annual Summit",
         image: "/wp-content/themes/storkmentors-theme/dist/images/g4.webp"
     },
 
     {
-        url: "#",
+        url: "our-library",
         title: "Our Library",
         image: "/wp-content/themes/storkmentors-theme/dist/images/g5.jpg"
     },
     {
-        url: "#",
+        url: "downloads",
         title: "Downloads",
         image: "/wp-content/themes/storkmentors-theme/dist/images/g6.webp"
     },
     {
-        url: "#",
+        url: "our-community",
         title: "Our Community",
         image: "/wp-content/themes/storkmentors-theme/dist/images/g7.jpg"
     },
     {
-        url: "#",
+        url: "1-1-mentors",
         title: "1-1 Mentors",
         image: "/wp-content/themes/storkmentors-theme/dist/images/g8.webp"
     }

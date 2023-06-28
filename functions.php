@@ -19,16 +19,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('bb_theme', get_stylesheet_directory_uri() . '/dist/app.js', [], $version, true);
 });
 
-// Share globally with Inertia views
-add_action('after_setup_theme', function () {
-    // dd($_ENV['WORDPRESS_ENV']);
-    Inertia::share([
-        'site' => [
-            'name'        => get_bloginfo('name'),
-            'description' => get_bloginfo('description'),
-        ],
-    ]);
-});
+
 
 // Add Inertia version. Helps with cache busting
 add_action('after_setup_theme', function () {
