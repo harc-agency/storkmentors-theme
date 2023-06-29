@@ -12,7 +12,7 @@
 
   <section class="" >
     <div
-      class="@[400px]:bg-slate-500 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5">
+      class="@[400px]:bg-slate-500 grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  ">
       <TeamMemberCard
         v-for="(teamMember, i) in teamMembers"
         :key="i"
@@ -31,7 +31,7 @@ const teamMembers = [
         name: "Dustin Woodard",
         title: "Web Dev Mentor",
         image: path("/images/dustin-woodard.webp"),
-        slogan: "So can we automate this?",
+        slogan: "I think we can automate this!",
         link: "#"
     },
     {
@@ -85,7 +85,7 @@ const teamMembers = [
         title: "Mentor",
         image: path("/images/finger-pointing.jpg"),
         slogan: "This could be you here!",
-        link: "#"
+        link: "/"
 
     }
 ]
