@@ -3,10 +3,10 @@
   <section class="lg:p-10 bg-[#404040]
     bg-gradient-to-r from-secondary-focus to-secondary
        items-center p-5">
-    <div class="flex flex-col px-5 lg:px-10  ">
-      <h1 class="text-white text-2xl">why</h1>
-      <h2 class="text-primary text-4xl">StorkMentors</h2>
-      <p class="text-white">We help people reinvent themselves and shift the [non-linear] trajectory of their lives, and we do so with attentive care and kindness.</p>
+    <div class="flex flex-col px-5 lg:px-10   md:w-8/12 m-auto  text-center">
+      <h2 class="-ml-64 text-white text-2xl">why</h2>
+      <h1 class="font-bold  text-primary text-4xl">StorkMentors</h1>
+      <p class="  text-white">We help people reinvent themselves and shift the [non-linear] trajectory of their lives, and we do so with attentive care and kindness.</p>
     </div>
   </section>
 
@@ -18,8 +18,8 @@
         :src="path('images/why-storkmentors-header.webp')" >
       <div
         class="lg:absolute
-        right-0 p-5 lg:p-10 lg:leading-9 sm:text-xl  lg:w-1/2">
-        <p class="font-bold text-2xl lg:text-4xl lg:text-right mb-4">
+        right-0 p-5 lg:p-10 lg:leading-9 sm:text-xl  w-full lg:w-1/3 m-auto">
+        <p class="font-bold text-2xl lg:text-4xl lg:text-left mb-4">
           What if, <span class=" border-b-2 border-primary ">
             right now
           </span>,
@@ -110,10 +110,10 @@
       </h1>
       <div>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <li class=" btn hover:border-transparent hover:bg-yellow-200 hover:text-secondary">Live Online Classes</li>
-          <li class=" btn hover:border-transparent hover:bg-yellow-200 hover:text-secondary">WebDev School</li>
-          <li class=" btn hover:border-transparent hover:bg-yellow-200 hover:text-secondary">1:1 Mentors</li>
-          <li class=" btn hover:border-transparent hover:bg-yellow-200 hover:text-secondary">Our Summit</li>
+          <Link as="li" href="" class=" btn hover:border-transparent hover:bg-yellow-200 hover:text-secondary">Live Online Classes</Link>
+          <Link as="li" href="" class=" btn hover:border-transparent hover:bg-yellow-200 hover:text-secondary">WebDev School</Link>
+          <Link as="li" href="" class=" btn hover:border-transparent hover:bg-yellow-200 hover:text-secondary">1:1 Mentors</Link>
+          <Link as="li" href="" class=" btn hover:border-transparent hover:bg-yellow-200 hover:text-secondary">Our Summit</Link>
         </ul>
       </div>
     </div>
@@ -199,6 +199,7 @@
 
 <script setup>
 import { path } from "@/helper/theme"
+import { Link } from "@inertiajs/inertia-vue3"
 
 </script>
 

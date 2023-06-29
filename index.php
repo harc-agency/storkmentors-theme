@@ -82,9 +82,22 @@ if (is_page('why-storkmentors')) {
     return Inertia::render('WhyStorkMentors', []);
 }
 
-// why stork mentors page
+// our team page
 if (is_page('our-team')) {
     return Inertia::render('OurTeam', []);
+}
+
+// Change Your Career page
+if (is_page('one-to-one-mentors')) {
+    return Inertia::render('OneToOneMentors', []);
+}
+// 1-1-mentors
+if (is_page('1-1-mentors')) {
+    return Inertia::render('OneToOneMentors', []);
+}
+// 1-1-mentors
+if (is_page('change-your-career')) {
+    return Inertia::render('ChangeYourCareer', []);
 }
 
 
