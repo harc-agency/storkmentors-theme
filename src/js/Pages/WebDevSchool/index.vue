@@ -299,7 +299,7 @@ onMounted(() => {
             scrub: 1,
             start: "top 80%",
             end: "top 50%",
-            markers: true,
+            markers: false,
             toggleActions: "restart none none reverse"
         },
         opacity: 0,
