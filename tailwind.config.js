@@ -2,7 +2,7 @@
 module.exports = {
     content: ["./src/**/*.{vue,js,ts}"],
     plugins: [
-        require('@tailwindcss/container-queries'),
+        require("@tailwindcss/container-queries"),
         require("daisyui")],
     daisyui: {
         themes: [
