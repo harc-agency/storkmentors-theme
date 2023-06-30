@@ -1,5 +1,5 @@
 <template>
-<svg viewBox="-30 0 100 100" stroke="currentColor" style="
+<svg id="storkmentor-logo" viewBox="-30 0 100 100" stroke="currentColor" style="
     width: 70px;
     height: 48px;
 ">
