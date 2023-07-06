@@ -1,6 +1,6 @@
 <template>
 <header class="flex align-center p-4 bg-secondary text-white">
-  <a href="/" class="text-white">
+  <a href="/" class="text-primary">
     <Logo />
   </a>
 
@@ -68,7 +68,7 @@
 
   <!-- desktop -->
   <div id="main-menu-desktop" class="relative navbar-center hidden lg:flex">
-    <ul class="flex ">
+    <ul class="flex items-center">
       <li tabindex="0" v-for=" (link, index) in page.props.menu" :key="index">
         <details v-if="link.children.length">
           <summary class="btn btn-ghost text-sm btn-sm rounded-btn">

@@ -8,6 +8,8 @@ mix.js("src/js/app.js", "dist")
     .postCss("src/css/app.css", ".", [
         require("tailwindcss")
     ])
+    .copyDirectory("src/assets", "dist/assets")
+
     .webpackConfig({
         resolve: {
             alias: {
