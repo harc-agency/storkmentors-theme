@@ -153,8 +153,8 @@ class Router
     public static function route($uri, $method)
     {
         $current_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        dd($current_uri);
-        die();
+        //dd($current_uri);
+        //die();
 
         foreach (self::$routes as $route) {
             if ($route['uri'] === $_SERVER['REQUEST_URI'] && $route['method'] === strtoupper($method)) {

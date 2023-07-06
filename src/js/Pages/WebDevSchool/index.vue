@@ -5,9 +5,9 @@
       StorkMentors WebDev School
     </h1>
 
-    <Link as="a"
-          href="/"
-          class="mt-5 btn btn-outline btn-wide btn-primary px-10 py-0">
+    <Link
+      href="/"
+      class="mt-5 btn btn-outline btn-wide btn-primary px-10 py-0">
       Apply
     </Link>
   </header>
@@ -77,7 +77,7 @@
         <!-- program detail btn -->
         <div class="flex justify-center">
           <Link as="a"
-                href="/"
+                href="/program-details"
                 class="mt-5 btn btn-outline btn-wide  px-10 py-0">
             Program Details
           </Link>
@@ -139,41 +139,7 @@
   </section>
 
   <!-- Upcoming Cohorts -->
-  <section>
-    <div class="container m-auto ">
-      <h2>Upcoming Cohorts</h2>
-      <div class="overflow-x-auto grid place-items-center">
-        <table class="table table-zebra table-md ">
-          <thead>
-            <tr >
-              <th>Start Date</th>
-              <th>6 Months Intensive</th>
-              <th>6 Months Support</th>
-              <th>Tuition</th>
-              <th>Enroll By</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="cohort in cohorts">
-              <td>{{ cohort.start_date }}</td>
-              <td>{{ cohort.intensive }}</td>
-              <td>{{ cohort.support }}</td>
-              <td>{{ cohort.tuition }}</td>
-              <td>{{ cohort.enroll_by }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- apply btn -->
-      <div class="mt-5 flex justify-center pb-20">
-        <Link as="a"
-              href="/"
-              class="btn btn-outline btn-wide px-10 py-0">
-          Apply
-        </Link>
-      </div>
-    </div>
-  </section>
+  <UpcomingCohorts />
 
   <!-- more resources -->
   <section >
@@ -209,36 +175,12 @@
 </template>
 
 <script setup>
+import UpcomingCohorts from "@/components/UpcomingCohorts.vue"
 import { onMounted } from "vue"
 import { Link } from "@inertiajs/inertia-vue3"
 import { path } from "@/helper/theme"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-// cohorts
-const cohorts = [
-    {
-        start_date: "Aug 6",
-        intensive: "Aug 6 - Feb 3",
-        support: "Feb 4 - Aug 3",
-        tuition: "$10,900",
-        enroll_by: "July 30"
-    },
-    {
-        start_date: "Oct 1",
-        intensive: "Oct 1 - Mar 30",
-        support: "Mar 31 - Sep 30",
-        tuition: "$10,900",
-        enroll_by: "Sep 29"
-    },
-    {
-        start_date: "Dec 3",
-        intensive: "Dec 3 - May 31",
-        support: "Jun 1 - Dec 1",
-        tuition: "$10,900",
-        enroll_by: "Dec 2"
-    }
-]
 
 // resources
 const resources = [
@@ -276,15 +218,7 @@ onMounted(() => {
     gsap.registerPlugin(ScrollTrigger)
 
     // scroll trigger li bullet points
-    gsap.from(".is-coding-right-bullets li", {
-        scrollTrigger: {
-            trigger: ".is-coding-right-bullets li",
-            scrub: 1,
-            start: "top 80%",
-            end: "top 50%",
-            markers: false,
-            toggleActions: "restart none none reverse"
-        },
+    gsap.fromTo(".is-coding-right-bullets li", {
         opacity: 0,
         x: 20,
         stagger: 0.5,

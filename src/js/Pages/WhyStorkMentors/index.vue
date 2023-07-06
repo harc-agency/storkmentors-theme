@@ -14,11 +14,10 @@
     class="flex flex-col items-left justify-center">
     <div class="relative flex flex-col">
       <img
-        class="sm:max-h-[300px] lg:max-h-[500px]   object-cover object-top w-full h-full"
-        :src="path('images/why-storkmentors-header.webp')" >
+        class="sm:max-h-[300px] lg:max-h-[500px] object-cover object-top w-full h-full"
+        :src="path('images/why-storkmentors-header.webp')">
       <div
-        class="lg:absolute
-        right-0 p-5 lg:p-10 lg:leading-9 sm:text-xl  w-full lg:w-1/3 m-auto">
+        class="lg:absolute right-0 p-5 lg:p-10 lg:leading-9 sm:text-lg w-full lg:w-1/3 m-auto">
         <p class="font-bold text-2xl lg:text-4xl lg:text-left mb-4">
           What if, <span class=" border-b-2 border-primary ">
             right now

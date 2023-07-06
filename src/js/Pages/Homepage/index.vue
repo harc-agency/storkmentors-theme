@@ -156,13 +156,15 @@
         </p>
       </div>
     </div>
-    <div v-html="props.shortcodes.newletter_form" class="p-20"></div>
+
+    <GazetteSignup :shortcode="props.shortcodes.newletter_form" />
   </section>
 </div>
 </template>
 
 <script setup>
 import Slider from "@/Components/Slider.vue"
+import GazetteSignup from "@/Components/GazetteSignup.vue"
 import { Link, usePage } from "@inertiajs/inertia-vue3"
 import { ref, reactive, computed, onMounted } from "vue"
 import { gsap } from "gsap"

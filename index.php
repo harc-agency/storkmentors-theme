@@ -101,6 +101,11 @@ if (is_page('web-dev-school')) {
     return Inertia::render('WebDevSchool', []);
 }
 
+//Program Details
+if (is_page('program-details')) {
+    return Inertia::render('ProgramDetails', []);
+}
+
 
 // is page
 if (is_page()) {

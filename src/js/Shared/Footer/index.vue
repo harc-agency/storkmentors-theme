@@ -1,5 +1,17 @@
 <template>
-<footer class="footer p-5">
+<section
+  class="flex flex-col items-center justify-center p-5">
+  <div>
+    <div class="flex w-32 justify-between">
+      <a _target="blank" v-for=" (item, index) in socialLinks" :key="index" :href="item.url" class="link link-hover">
+        <img class="filter grayscale hover:grayscale-0 w-6 h-6"
+             :src="item.icon" :alt="item.name" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer p-5 justify-around">
   <div>
     <h1 class=" text-primary text-2xl ">
       <Link href="/" :preserve-scroll="true">
@@ -9,27 +21,19 @@
   </div>
 
   <div>
-    <span class="footer-title">Social</span>
-
-    <a _target="blank" v-for=" (item, index) in socialLinks" :key="index" :href="item.url" class="link link-hover">
-      <img class="filter grayscale hover:grayscale-0 w-6 h-6"
-           :src="item.icon" :alt="item.name" />
-    </a>
+    <Link href="/terms-of-use" class="link link-hover">Terms of use</Link>
+    <Link href="/privacy-policy" class="link link-hover">Privacy policy</Link>
   </div>
 
   <div>
-    <span class="footer-title">Company</span>
     <Link href="/our-team" class="link link-hover">Our Team</Link>
-    <a class="link link-hover">Contact</a>
-    <a class="link link-hover">Jobs</a>
-    <a class="link link-hover">Press kit</a>
-  </div>
+    <Link href="/our-values" class="link link-hover">Our Values</Link>
+    <Link href="/our-alumni" class="link link-hover">Our Alumni</Link>
 
-  <div>
-    <span class="footer-title">Legal</span>
-    <a class="link link-hover">Terms of use</a>
-    <a class="link link-hover">Privacy policy</a>
-    <a class="link link-hover">Cookie policy</a>
+    <Link href="/faqs" class="link link-hover">FAQs</Link>
+    <Link href="/coding-career-stats" class="link link-hover">Coding Career Stats</Link>
+    <Link href="/nurturing-the-nurturers" class="link link-hover">Nurturing the Nurturers</Link>
+    <Link href="/contact-us" class="link link-hover">Contact Us</Link>
   </div>
 </footer>
 </template>
@@ -57,7 +61,7 @@ const socialLinks = [
     //youtube-icon.svg
     {
         name: "Youtube",
-        url: "https://www.youtube.com/channel/UCQX6Z1Z0Z6X5Z9Z9Z9Z9Z9Z9",
+        url: "https://www.youtube.com/@StorkMentors-sm2ox",
         icon: path("assets/icons/youtube-icon.svg")
     }
 ]

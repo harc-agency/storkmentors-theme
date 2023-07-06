@@ -3,4 +3,3 @@ export const path = filepath => "/wp-content/themes/storkmentors-theme/dist/" + 
 
 // get the the theme name
 export const name = () => "storkmentors-theme"
-
